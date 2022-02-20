@@ -3,11 +3,7 @@ import UserItem from "./UserItem";
 import GithubContext from "../../context/github/GithubContext";
 
 const UserResults = () => {
-  const { users, loading, fetchUsers } = useContext(GithubContext);
-  useEffect(() => {
-    fetchUsers();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const { users, loading } = useContext(GithubContext);
 
   if (loading) return <h3>Loading...</h3>;
   return (
