@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import UserItem from "./UserItem";
 
 const UserResults = () => {
   const [users, setUsers] = useState([]);
@@ -23,8 +24,8 @@ const UserResults = () => {
   if (loading) return <h3>Loading...</h3>;
   return (
     <div className="grid grid-cols-1 gap-8 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2">
-      {users.map((user, index) => (
-        <h3 key={index}>{user.login}</h3>
+      {users.map((user) => (
+        <UserItem key={user.id} user={user} />
       ))}
     </div>
   );
