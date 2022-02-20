@@ -6,6 +6,7 @@ const UserResults = () => {
   const { users, loading, fetchUsers } = useContext(GithubContext);
   useEffect(() => {
     fetchUsers();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (loading) return <h3>Loading...</h3>;
